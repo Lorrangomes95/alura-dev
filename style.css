@@ -1,0 +1,180 @@
+/* Importa a fonte Chakra Petch do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* Estiliza o corpo da página */
+body, html {
+    font-family: "Chakra Petch", sans-serif;
+    background: radial-gradient(circle, rgb(0, 0, 0) 56%, rgba(5,128,138,0.9108018207282913) 72%, rgba(76,3,131,0.9444152661064426) 91%, rgba(0, 0, 0, 0.827) 100%);
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Altura total da viewport */
+    overflow-x: hidden; /* Remove o scroll horizontal */
+    box-sizing: border-box;
+}
+
+/* Garantir que o conteúdo principal se ajuste dentro da tela */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-top: 100px; /* Ajuste conforme necessário */
+    padding-bottom: 80px; /* Espaçamento inferior para não sobrepor o rodapé */
+    box-sizing: border-box;
+    overflow: hidden; /* Evita o scroll dentro do conteúdo principal */
+}
+
+/* Estiliza a imagem para evitar cortes */
+.imagem {
+    max-width: 25%;
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: cover; /* Garante que a imagem se ajuste ao contêiner sem cortes */
+    display: block;
+    margin: 0 auto;
+}
+
+/* Estiliza os títulos h1 */
+h1 {
+    font-size: 2.5rem; /* Tamanho da fonte */
+    color: #ffffff; /* Cor do texto */
+    text-align: center; /* Alinha o texto ao centro */
+    letter-spacing: 0.4rem; /* Espaçamento entre letras */
+}
+
+/* Efeito de digitação contínua */
+.typing-effect {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid white; /* Cursor piscante */
+    animation: typing 6s steps(12, end) infinite, blink .90s step-end infinite;
+    vertical-align: bottom; /* Alinhamento do texto */  
+    margin-left: 1px; /* Ajuste para remover o espaço */
+}
+
+@keyframes typing {
+    0% { width: 0; }
+    50% { width: 12ch; } /* Define o número de caracteres que aparecerá */
+    100% { width: 12ch; } /* Mantém o texto visível antes de recomeçar */
+}
+
+@keyframes blink {
+    60% { border-color: transparent; }
+    100% { border-color: white; }
+}
+
+/* Estiliza as seções da página */
+section {
+    display: flex; /* Usa Flexbox para layout */
+    flex-direction: column; /* Alinha os itens na vertical */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    margin-bottom: 3rem; /* Espaçamento abaixo de cada seção */
+}
+
+/* Estiliza os inputs dentro das seções */
+section input {
+    width: 30rem; /* Largura dos inputs */
+    border: none; /* Remove a borda padrão */
+    padding: 1rem; /* Espaçamento interno */
+    border-radius: 1.5rem; /* Borda arredondada */
+    margin-bottom: 1rem; /* Espaçamento abaixo dos inputs */
+    color: #000000; /* Cor do texto */
+    font-size: 1rem; /* Tamanho da fonte */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+}
+
+/* Estiliza os botões dentro das seções */
+section button {
+    padding: 0.8rem 1.2rem; /* Espaçamento interno do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 1.5rem; /* Borda arredondada */
+    background-color: #30475E; /* Cor de fundo do botão */
+    color: #F5F7F8; /* Cor do texto do botão */
+    font-size: 1rem; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+section button:hover {
+    background-color: aqua; /* Cor de fundo do botão */
+    color: #000000; /* Cor do texto do botão */
+    transform: scale(1.1);
+    transition: .7s;
+}
+
+/* Ajusta a posição do menu "Pesquisar" */
+.menu-pesquisar {
+    position: relative; /* Ajuste a posição se necessário */
+    z-index: 10; /* Valor alto para garantir que fique acima de outros elementos */             
+}
+
+/* Estiliza o rodapé da página */
+footer {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    text-align: center;
+    width: 100%;
+    position: fixed; /* Fixa o rodapé no fundo da página */
+    bottom: 0; /* Garante que o rodapé fique no final da página */   
+    position: absolute;  
+}
+
+/* Estiliza a seção de resultados */
+.results-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    width: 100%;
+    padding: 20px;
+    
+}
+
+/* Ajusta a exibição dos resultados sem scroll interno */
+#resultadosPesquisa {
+    width: 90%;
+    max-width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    
+}
+
+.item-resultado {
+    background-color: #000000;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.item-resultado img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+.item-resultado h2 {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin: 0.5rem 0;
+}
+
+.item-resultado p {
+    color: #ffffff;
+    margin: 0.5rem 0;
+}
+
+.item-resultado audio {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.item-resultado a {
+    text-decoration: none;
+    color: #0080ff;
+    font-weight: bold;
+}
